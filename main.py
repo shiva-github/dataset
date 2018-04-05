@@ -15,6 +15,7 @@ def movie_data(filename):
 			list1 = []
 			i +=1
 			if i == 15: break
+
 	return listfinal, filetype
 ##################################################
 ############### CREATE TABLE #####################
@@ -30,26 +31,84 @@ def create_tbl(datalist,tableName):
 	print(data)
 	return True
 ##################################################
-############### INSERT TABLE #####################
+############### INSERT TABLE 1 ###################
 ##################################################
 
-def table_insert(datalist,tableName):
-	data = """INSERT INTO 
-	 %s VALUES (null, """ %(tableName)
-	
-	for x in datalist[:3]:
-		for y in x:
-			data += "%s," %(y)
-# data += "%s %s %s, " %(x["name"], x["dtype"], x["other"])
-	data += ")"
-	print(data)
+def table_insert1(datalist,tableName):
+	dataInsert = []
+	for x in datalist:
+		data = """INSERT INTO %s VALUES (null, """ %(tableName)
+		for y in x[:-1]:
+			data += "'{}'," .format(y)
+		data += "{} ) " .format(x[-1])
+		dataInsert.append(data)
+		data = []
+	print(len(dataInsert))
+	return True
 
-	# for x in datalist[:-1]:
-	# 	data += "%s %s %s, " %(x["name"], x["dtype"], x["other"])
+##################################################
+############### INSERT TABLE 2 ###################
+##################################################
 
-	# data += "%s %s %s) " %(datalist[-1]["name"], datalist[-1]["dtype"], datalist[-1]["other"])
-	
-	# return True
+def table_insert2(datalist,tableName):
+	dataInsert = []
+	for x in datalist:
+		data = """INSERT INTO %s VALUES (null, """ %(tableName)
+		for y in x[:-1]:
+			data += "'{}'," .format(y)
+		data += "{} ) " .format(x[-1])
+		dataInsert.append(data)
+		data = []
+	print(len(dataInsert))
+	return True
+##################################################
+############### INSERT TABLE 3 ###################
+##################################################
+
+def table_insert3(datalist,tableName):
+	dataInsert = []
+	for x in datalist:
+		data = """INSERT INTO %s VALUES (null, """ %(tableName)
+		for y in x[:-1]:
+			data += "'{}'," .format(y)
+		data += "{} ) " .format(x[-1])
+		dataInsert.append(data)
+		data = []
+	print(len(dataInsert))
+	return True
+##################################################
+############### INSERT TABLE 4 ###################
+##################################################
+
+def table_insert4(datalist,tableName):
+	dataInsert = []
+	for x in datalist:
+		data = """INSERT INTO %s VALUES (null, """ %(tableName)
+		for y in x[:-1]:
+			data += "'{}'," .format(y)
+		data += "{} ) " .format(x[-1])
+		dataInsert.append(data)
+		data = []
+	print(len(dataInsert))
+	return True
+
+##################################################
+############### INSERT TABLE 5 ###################
+##################################################
+
+def table_insert5(datalist,tableName):
+	dataInsert = []
+	for x in datalist:
+		data = """INSERT INTO %s VALUES (null, """ %(tableName)
+		for y in x[:-1]:
+			data += "'{}'," .format(y)
+		data += "{} ) " .format(x[-1])
+		dataInsert.append(data)
+		data = []
+	print(len(dataInsert))
+	return True
+
+
 ##################################################
 ############### MAIN FUNCTION ####################
 ##################################################
@@ -74,7 +133,7 @@ def main():
 	# print(filetype)
 	table_insert(movie, filetype)
 	print("\n-------------------------------\n\n")
-	print(movie[12])
+	# print(movie[12])
 	print("\n-------------------------------\n\n")
 
 	# movie = []
